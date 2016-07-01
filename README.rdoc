@@ -22,11 +22,10 @@ Notes:
 
 == Notes about this implementation
 
-* Notable Gems used
+* Notable Gems used:
   - This application uses the Nokigiri, URI and Open-Uri gems for web navigation, html parsing and uri manipulation
 
-* Code Design
-  The following features were implemented to comply with the single responsibility design principle
+* Code Design: the following features were implemented to comply with the single responsibility design principle:
     - Adapter pattern
       An adapter pattern is used for the web crawler. An adapter handles the web crawling and map creating. The controller receives user requests, instatiantes an adapter an responds to user with adapter response.
     - Helper Methods
