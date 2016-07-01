@@ -3,7 +3,6 @@ module Adapter
 # try to remove these. Might not need them because of Rails
 require 'open-uri'
 require 'nokogiri'
-require 'pry'
 require 'uri'
 
 
