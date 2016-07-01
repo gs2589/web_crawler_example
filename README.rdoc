@@ -1,28 +1,50 @@
-== README
+= Web Crawler and SiteMap Creator - README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is application is a rails based web Crawler and Sitemap creator. It will take an input 
+to see a live version of the application please go to label[url].
 
-Things you may want to cover:
+The web crawler algorithm is recursive.
 
-* Ruby version
+== Installation
 
-* System dependencies
+$ git clone git@github.com:gs2589/web_crawler_example.git && cd web_crawler_example
+$ bundle install
+$ rails s 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+then navigate to localhost:3000
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Notes:
+* You need Ruby and Rails to be installed
+* See Gemfile for dependencies
+* Database is not necessary
+
+
+== Notes about this implementation
+
+* Notable Gems used
+  - This application uses the Nokigiri, URI and Open-Uri gems for web navigation, html parsing and uri manipulation
+
+* Code Design
+  The following features were implemented to comply with the single responsibility design principle
+    - Adapter pattern
+      An adapter pattern is used for the web crawler. An adapter handles the web crawling and map creating. The controller receives user requests, instatiantes an adapter an responds to user with adapter response.
+    - Helper Methods
+      Helper methods were created to handel: formatting of outputted map, determination of whether a link is internal or external, determination of what the host domain is, determination of whether a link is an image or another page.
+      
+  RESTful conventions are not generally followed
+
+* Scope
+  - This application crawls all links that contain the <a> or <img> html selectors. 
+  - scroll-links such as https://domain_name.com/#home  are ignored
+  - links that appear in a parent page are not listed in child pages
+  - links only appear once unless they are aliased
+  - the application follows links regardless of whether they are written in relative or absolute notation
+  - links that return errors are ignored
+
+
+
+* Sleep Times
+  - The application uses a .5 second sleep time between requests to be respectful of crawled sites and prevent overloading them.
+
+

@@ -1,8 +1,10 @@
 class TreesController < ApplicationController
 
 def index
+  if params['url']
   crawler=Adapter::Crawler.new()
-  @string=crawler.create_site_map("http://flatironschool.com")
+  @tree=crawler.create_site_map(params["url"])
+  end
   
   
 end

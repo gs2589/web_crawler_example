@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ a {
+  color: blue;
+  text-decoration: none; /* no underline */
+}
+
+.internal{
+  color: blue;
+}
+
+.external{
+color: red;
+}
+
+.an_image{
+font-style: italic; 
+}
+
+
