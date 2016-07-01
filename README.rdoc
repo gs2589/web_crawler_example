@@ -7,9 +7,9 @@ The web crawler algorithm is recursive.
 
 == Installation
 
-$ git clone git@github.com:gs2589/web_crawler_example.git && cd web_crawler_example
-$ bundle install
-$ rails s 
+     # $ git clone git@github.com:gs2589/web_crawler_example.git && cd web_crawler_example
+     # $ bundle install
+     # $ rails s 
 
 then navigate to localhost:3000
 
@@ -26,12 +26,12 @@ Notes:
   - This application uses the Nokigiri, URI and Open-Uri gems for web navigation, html parsing and uri manipulation
 
 * Code Design: the following features were implemented to comply with the single responsibility design principle:
-    - Adapter pattern
-      An adapter pattern is used for the web crawler. An adapter handles the web crawling and map creating. The controller receives user requests, instatiantes an adapter an responds to user with adapter response.
-    - Helper Methods
-      Helper methods were created to handel: formatting of outputted map, determination of whether a link is internal or external, determination of what the host domain is, determination of whether a link is an image or another page.
+  - Adapter pattern
+    An adapter pattern is used for the web crawler. An adapter handles the web crawling and map creating. The controller receives user requests, instatiantes an adapter an responds to user with adapter response.
+  - Helper Methods
+    Helper methods were created to handel: formatting of outputted map, determination of whether a link is internal or external, determination of what the host domain is, determination of whether a link is an image or another page.
       
-  RESTful conventions are not generally followed
+ * RESTful conventions are not generally followed
 
 * Scope
   - This application crawls all links that contain the <a> or <img> html selectors. 
