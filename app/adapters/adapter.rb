@@ -58,7 +58,7 @@ require 'uri'
           
 
             links_in_parent.compact!
-            #regresses on all links on the page except those present in parent pages
+            #recurses on all links on the page except those present in parent pages
             links_in_parent.each do |absolute_url|
 
             create_site_map(absolute_url, level+1, url_tracker, links_in_parent, tree_string) unless template_links.include?(absolute_url)
